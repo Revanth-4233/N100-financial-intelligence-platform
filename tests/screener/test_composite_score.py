@@ -6,6 +6,7 @@ import sys
 from pathlib import Path
 
 import pandas as pd
+import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent / "src" / "screener"))
 
@@ -21,7 +22,7 @@ def test_winsorize_caps_extreme_high_value():
     series = pd.Series([10, 20, 30, 40, 5000])  # 5000 is an obvious outlier
     result = winsorize(series, low_pct=10, high_pct=90)
     assert result.max() < 5000  # the outlier must be pulled down
-    assert result.max() == series.quantile(0.90)
+    assert result.max() == pytest.approx(series.quantile(0.90))
 
 
 def test_scale_0_100_normal_case():

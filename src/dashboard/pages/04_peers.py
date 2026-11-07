@@ -128,6 +128,8 @@ fig.add_trace(
         r=company_values + company_values[:1],
         theta=RADAR_AXES + RADAR_AXES[:1],
         fill="toself",
+        fillcolor="rgba(37, 99, 235, 0.25)",
+        line=dict(color="#38BDF8", width=2.5),
         name=picked_id,
     )
 )
@@ -137,11 +139,17 @@ fig.add_trace(
         theta=RADAR_AXES + RADAR_AXES[:1],
         fill="none",
         name="Peer Group Avg",
-        line={"dash": "dash"},
+        line=dict(color="#94A3B8", dash="dash", width=1.8),
     )
 )
 fig.update_layout(
-    polar={"radialaxis": {"visible": True, "range": [0, 100]}},
+    polar=dict(
+        radialaxis=dict(visible=True, range=[0, 100], gridcolor="rgba(148, 163, 184, 0.15)"),
+        angularaxis=dict(gridcolor="rgba(148, 163, 184, 0.15)"),
+        bgcolor="rgba(15, 23, 42, 0.4)",
+    ),
+    paper_bgcolor="rgba(0,0,0,0)",
+    font=dict(color="#CBD5E1"),
     showlegend=True,
     height=500,
     margin={"t": 30, "b": 30},

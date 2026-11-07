@@ -17,10 +17,10 @@ st.set_page_config(layout="wide")
 st.markdown(
     """
     <div class="n100-home-hero">
-        <div class="n100-home-eyebrow">N100 FINANCIAL INTELLIGENCE</div>
-        <h1>NIFTY 100 Financial Intelligence</h1>
-        <p>Financial analytics &amp; research workspace</p>
-        <div class="n100-home-status">92 companies &nbsp;·&nbsp; 30+ KPIs &nbsp;·&nbsp; 8 analytical screens</div>
+        <div class="n100-home-eyebrow">N100 FINANCIAL INTELLIGENCE SUITE</div>
+        <h1>NIFTY 100 Financial Intelligence Suite</h1>
+        <p>Enterprise Financial Analytics, Valuation &amp; Fundamental Research Workspace</p>
+        <div class="n100-home-status">92 Enterprise Universe &nbsp;·&nbsp; 30+ Fundamental KPIs &nbsp;·&nbsp; 8 Research Screens</div>
     </div>
     """,
     unsafe_allow_html=True,
@@ -30,34 +30,36 @@ st.markdown(
     """
     <style>
         .n100-home-hero {
-            padding: 0.35rem 0 0.9rem 0;
-            margin-bottom: 0.5rem;
+            padding: 0.4rem 0 1rem 0;
+            margin-bottom: 0.6rem;
             border-bottom: 1px solid rgba(148, 163, 184, 0.16);
         }
         .n100-home-eyebrow {
-            color: #00D2C4;
-            font-size: 0.72rem;
+            color: #38BDF8;
+            font-size: 0.74rem;
             font-weight: 700;
-            letter-spacing: 0.12em;
-            margin-bottom: 0.25rem;
+            letter-spacing: 0.14em;
+            margin-bottom: 0.3rem;
         }
         .n100-home-hero h1 {
-            color: #E6EDF2;
-            font-size: 2rem;
+            color: #F8FAFC;
+            font-size: 2.1rem;
             line-height: 1.15;
             margin: 0;
             letter-spacing: -0.03em;
+            font-weight: 700;
         }
         .n100-home-hero p {
-            color: #A0AEC0;
+            color: #94A3B8;
             font-size: 0.95rem;
             margin: 0.35rem 0 0 0;
         }
         .n100-home-status {
-            color: #94A3B8;
-            font-size: 0.76rem;
+            color: #64748B;
+            font-size: 0.78rem;
             margin-top: 0.55rem;
             letter-spacing: 0.03em;
+            font-weight: 500;
         }
     </style>
     """,
@@ -106,16 +108,31 @@ left, right = st.columns([1, 1])
 with left:
     st.subheader("Sector Breakdown")
     sector_df = pd.DataFrame(payload["sector_breakdown"])
+    palette = [
+        "#2563EB", "#38BDF8", "#06B6D4", "#10B981", "#6366F1",
+        "#8B5CF6", "#EC4899", "#F59E0B", "#14B8A6", "#64748B",
+    ]
     fig = go.Figure(
         data=[
             go.Pie(
                 labels=sector_df["broad_sector"],
                 values=sector_df["count"],
-                hole=0.5,
+                hole=0.55,
+                marker=dict(colors=palette, line=dict(color="#0F172A", width=2)),
+                textinfo="label+percent",
+                textposition="outside",
+                insidetextorientation="radial",
             )
         ]
     )
-    fig.update_layout(margin={"t": 10, "b": 10, "l": 10, "r": 10}, height=380)
+    fig.update_layout(
+        margin={"t": 15, "b": 15, "l": 15, "r": 15},
+        height=380,
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        showlegend=False,
+        font=dict(color="#CBD5E1", size=11),
+    )
     st.plotly_chart(fig, width="stretch")
     st.caption(
         f"{len(sector_df)} sectors, {sector_df['count'].sum()} companies. "

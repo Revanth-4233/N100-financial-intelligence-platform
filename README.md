@@ -1,8 +1,7 @@
-<h1><img src="assets/graph.png" alt="N100 Logo" width="32" style="vertical-align: middle; margin-right: 8px;" /> Nifty 100 Financial Intelligence</h1>
+<h1><img src="assets/graph.png" alt="N100 Logo" width="32" style="vertical-align: middle; margin-right: 8px;" /> Nifty 100 Financial Intelligence Suite</h1>
 
-**A production-style financial analytics and research workspace for a curated 92-company subset of the Nifty 100:**<br>
-
- ETL pipeline, 30+ financial metrics & analytical signals, investment screener, peer benchmarking, NLP-generated pros/cons, PDF reporting, KMeans clustering, and a 19-endpoint REST API on top of an 8-screen Streamlit dashboard (cloud deployed).
+**An enterprise financial analytics and equity research workspace for a curated 92-company universe of the Nifty 100:**<br>
+Automated ETL pipeline, 30+ financial ratios & analytical signals, dynamic investment screener with 1-click presets, peer benchmarking radar, cash-flow capital allocation classification, KMeans clustering, automated PDF tearsheet generation, and a 19-endpoint FastAPI backend driving an 8-screen modern Streamlit dashboard.
 
 <p align="center">
    <!-- Core Stack -->
@@ -10,28 +9,33 @@
   <img src="https://img.shields.io/badge/Pandas-Analytics-150458?logo=pandas&logoColor=white" alt="Pandas" />
   <img src="https://img.shields.io/badge/NumPy-Data%20Computing-013243?logoColor=white" alt="Numpy" />
   <img src="https://img.shields.io/badge/Scikit Learn-%20KMeans Clustering-F7931E?logo=scikit-learn&logoColor=white" alt="Scikit-Learn" />
-  <img src="https://img.shields.io/badge/Plotly-Visualization-3F4F75?logo=plotly&logoColor=white" alt="Plotly" />
+  <img src="https://img.shields.io/badge/Plotly-Modern%20Charts-3F4F75?logo=plotly&logoColor=white" alt="Plotly" />
   <img src="https://img.shields.io/badge/FastAPI-REST%20API-009688?logo=fastapi&logoColor=white" alt="FastAPI" />
   <img src="https://img.shields.io/badge/SQLite-13%20tables-003B57?logo=sqlite&logoColor=white" alt="SQLite" />
   <img src="https://img.shields.io/badge/API-19%20endpoints-00BFA5" alt="19 API endpoints" />
    <!-- Testing / Quality -->
-  <img src="https://img.shields.io/badge/Pytest-172%20Passing-2EA44F?logo=pytest&logoColor=white" alt="Pytest" />
+  <img src="https://img.shields.io/badge/Pytest-Passing-2EA44F?logo=pytest&logoColor=white" alt="Pytest" />
   <img src="https://img.shields.io/badge/Ruff-Linting-D7FF64?logo=ruff&logoColor=black" alt="Ruff" />
-   <!-- Deployment -->
-  <img src="https://img.shields.io/badge/Render-FastAPI%20Backend-46E3B7?logo=render&logoColor=black" alt="Render" />
-  <img src="https://img.shields.io/badge/Streamlit%20Cloud-Live%20Dashboard-FF4B4B?logo=streamlit&logoColor=white" alt="Streamlit Cloud" />
    <!-- License -->
   <img src="https://img.shields.io/badge/License-MIT-green?logo=MIT&logoColor=white" alt="License" />
-
 </p>
 
-> **Release:** `v1.0.0` -- Initial stable release
+> **Author:** Mukesh Revanth · Bluestock Fintech Internship  
+> **Repository:** [https://github.com/Revanth-4233/N100-financial-intelligence-platform](https://github.com/Revanth-4233/N100-financial-intelligence-platform)  
+> **Release:** `v1.2.0` — Enhanced Theme & Analytics Edition
 
-## Live Demo:
+## Quick Launch:
 
-🚀 **Live app Link:** [https://nifty100-finintel.streamlit.app](https://nifty100-finintel.streamlit.app/) <br>
-📡 **Swagger API Docs:** [https://n100-financial-intelligence-api-nuv0.onrender.com/docs](https://n100-financial-intelligence-api-nuv0.onrender.com/docs)<br>
-🩺 **API Health:** [https://n100-financial-intelligence-api-nuv0.onrender.com/api/v1/health](https://n100-financial-intelligence-api-nuv0.onrender.com/api/v1/health)
+```powershell
+# 1. Start the FastAPI backend service
+uvicorn src.api.main:app --port 8000 --reload
+
+# 2. Launch the Streamlit Intelligence Dashboard (in a new terminal)
+streamlit run src/dashboard/app.py
+```
+
+- **Interactive API Documentation (Swagger):** `http://127.0.0.1:8000/docs`
+- **Dashboard Interface:** `http://localhost:8501`
 
 
 <img src="assets/hero-banner.png" alt="N100 Financial Intelligence Platform dashboard" width="100%" />

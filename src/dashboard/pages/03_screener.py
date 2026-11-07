@@ -67,13 +67,21 @@ for _, key, _, _, _, _, default in SLIDERS:
 if "_preset_note" not in st.session_state:
     st.session_state["_preset_note"] = None
 
-st.subheader("Presets")
-preset_cols = st.columns(6)
-for i, (name, (values, note)) in enumerate(PRESETS.items()):
-    if preset_cols[i].button(name, width="stretch"):
-        for key, value in values.items():
-            st.session_state[key] = value
-        st.session_state["_preset_note"] = f"**{name}**: {note}" if note else None
+st.subheader("Presets & Quick Filters")
+p_col1, p_col2 = st.columns([5, 1])
+with p_col1:
+    preset_cols = st.columns(6)
+    for i, (name, (values, note)) in enumerate(PRESETS.items()):
+        if preset_cols[i].button(name, width="stretch"):
+            for key, value in values.items():
+                st.session_state[key] = value
+            st.session_state["_preset_note"] = f"**{name}**: {note}" if note else None
+            st.rerun()
+with p_col2:
+    if st.button("↺ Reset All", width="stretch", type="secondary"):
+        for _, key, _, _, _, _, default in SLIDERS:
+            st.session_state[key] = default
+        st.session_state["_preset_note"] = None
         st.rerun()
 
 if st.session_state["_preset_note"]:

@@ -31,14 +31,14 @@ if len(merged) < 92:
 # Keep the treemap aligned with the app's Deep Navy / Teal visual system.
 # Distinct patterns remain easy to tell apart without the bright default Plotly palette.
 PATTERN_COLORS = {
-    "Reinvestor": "#00D2C4",
+    "Reinvestor": "#38BDF8",
     "Shareholder Returns": "#3B82F6",
     "Growth Funded by Debt": "#F59E0B",
     "Distress Signal": "#EF4444",
     "Liquidating Assets": "#8B5CF6",
     "Mixed": "#64748B",
     "Pre-Revenue": "#A78BFA",
-    "Cash Accumulator": "#22C55E",
+    "Cash Accumulator": "#10B981",
     "Unclassified": "#475569",
 }
 
@@ -49,8 +49,13 @@ fig = px.treemap(
     color="pattern_label",
     color_discrete_map=PATTERN_COLORS,
 )
-fig.update_traces(marker_line_color="#07111F", marker_line_width=1.5)
-fig.update_layout(height=550, margin={"t": 20, "b": 20})
+fig.update_traces(marker_line_color="#0F172A", marker_line_width=1.5)
+fig.update_layout(
+    height=550,
+    margin={"t": 20, "b": 20},
+    paper_bgcolor="rgba(0,0,0,0)",
+    font=dict(color="#CBD5E1"),
+)
 
 event = st.plotly_chart(fig, width="stretch", on_select="rerun", selection_mode="points")
 

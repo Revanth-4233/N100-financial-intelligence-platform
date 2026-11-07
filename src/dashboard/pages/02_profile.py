@@ -86,9 +86,29 @@ if not pl.empty:
     st.subheader("Revenue & Net Profit")
     pl = pl.sort_values("year").tail(10)
     fig = go.Figure()
-    fig.add_bar(x=pl["year"], y=pl["sales"], name="Revenue (₹ Cr)", hovertemplate="₹%{y:,.0f} Cr<extra>Revenue</extra>")
-    fig.add_bar(x=pl["year"], y=pl["net_profit"], name="Net Profit (₹ Cr)", hovertemplate="₹%{y:,.0f} Cr<extra>Net Profit</extra>")
-    fig.update_layout(barmode="group", height=380, margin={"t": 10, "b": 10})
+    fig.add_bar(
+        x=pl["year"],
+        y=pl["sales"],
+        name="Revenue (₹ Cr)",
+        hovertemplate="₹%{y:,.0f} Cr<extra>Revenue</extra>",
+        marker_color="#3B82F6",
+    )
+    fig.add_bar(
+        x=pl["year"],
+        y=pl["net_profit"],
+        name="Net Profit (₹ Cr)",
+        hovertemplate="₹%{y:,.0f} Cr<extra>Net Profit</extra>",
+        marker_color="#10B981",
+    )
+    fig.update_layout(
+        barmode="group",
+        height=380,
+        margin={"t": 10, "b": 10},
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        font=dict(color="#CBD5E1"),
+        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+    )
     st.plotly_chart(fig, width="stretch")
     if len(pl) < 10:
         st.caption(f"Only {len(pl)} years of P&L data available for this company.")
@@ -106,6 +126,8 @@ if not ratios.empty:
             y=roe_hist["return_on_equity_pct"],
             name="ROE %",
             mode="lines+markers",
+            line=dict(color="#38BDF8", width=2.5),
+            marker=dict(size=6, color="#38BDF8"),
             hovertemplate="ROE: %{y:.1f}%<extra></extra>",
         ),
         secondary_y=False,
@@ -114,10 +136,18 @@ if not ratios.empty:
         fig2.add_hline(
             y=row["roce_percentage"],
             line_dash="dot",
+            line_color="#F59E0B",
             annotation_text=f"ROCE (latest snapshot, static): {row['roce_percentage']:.1f}%",
+            annotation_font_color="#F59E0B",
             secondary_y=True,
         )
-    fig2.update_layout(height=360, margin={"t": 10, "b": 10})
+    fig2.update_layout(
+        height=360,
+        margin={"t": 10, "b": 10},
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        font=dict(color="#CBD5E1"),
+    )
     st.plotly_chart(fig2, width="stretch")
     st.caption(
         "ROCE has no year-by-year history in the database (only a single latest-snapshot value "

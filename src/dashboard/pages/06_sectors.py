@@ -51,7 +51,13 @@ else:
         labels={"sales": "Revenue (₹ Cr)", "return_on_equity_pct": "ROE (%)", "sub_sector": "Sub-sector"},
         size_max=50,
     )
-    fig.update_layout(height=480, margin={"t": 20, "b": 20})
+    fig.update_layout(
+        height=480,
+        margin={"t": 20, "b": 20},
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        font=dict(color="#CBD5E1"),
+    )
     st.plotly_chart(fig, width="stretch")
 
     total_in_sector = companies_payload["count"]
@@ -68,6 +74,18 @@ else:
         "Median Revenue (₹ Cr)": merged["sales"].median(),
         "Median Market Cap (₹ Cr)": merged["market_cap_crore"].median(),
     }
-    bar_fig = go.Figure(go.Bar(x=list(median_metrics.keys()), y=list(median_metrics.values())))
-    bar_fig.update_layout(height=350, margin={"t": 20, "b": 20})
+    bar_fig = go.Figure(
+        go.Bar(
+            x=list(median_metrics.keys()),
+            y=list(median_metrics.values()),
+            marker_color=["#38BDF8", "#2563EB", "#6366F1"],
+        )
+    )
+    bar_fig.update_layout(
+        height=350,
+        margin={"t": 20, "b": 20},
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        font=dict(color="#CBD5E1"),
+    )
     st.plotly_chart(bar_fig, width="stretch")

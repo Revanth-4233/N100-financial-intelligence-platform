@@ -90,7 +90,14 @@ else:
             secondary_y=on_secondary,
         )
 
-    fig.update_layout(height=460, margin={"t": 30, "b": 30}, hovermode="x unified")
+    fig.update_layout(
+        height=460,
+        margin={"t": 30, "b": 30},
+        hovermode="x unified",
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        font=dict(color="#CBD5E1"),
+    )
     if has_pct:
         fig.update_yaxes(title_text="% / ratio", secondary_y=False)
     if has_cr:

@@ -34,34 +34,28 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-        /* 1. Teal coloring to Sidebar */
+        /* 1. Electric Cyan coloring to Sidebar */
         [data-testid="stSidebarNav"] span[data-testid="stIconMaterial"], 
         header [data-testid="stIconMaterial"] {
-            color: #00D2C4 !important;
+            color: #38BDF8 !important;
         }
         
         /* 2. Softened sidebar dividing boundary line */
         [data-testid="stSidebar"] {
-            border-right: 1px solid rgba(128, 128, 128, 0.18);
+            border-right: 1px solid rgba(148, 163, 184, 0.12);
         }
 
-        /* Keep sidebar content in its own scrollable layer. This prevents
-           contextual controls from visually slipping under the branding
-           block when the sidebar is tall (navigation + filters). 
-        */
+        /* Keep sidebar content in its own scrollable layer. */
         [data-testid="stSidebarContent"] {
             overflow-y: auto !important;
             overscroll-behavior: contain;
         }
         
-        /* 3. Native Streamlit status messages: quieter, compact, theme-aligned.   
-           Semantic icon colors are retained so warning/info/error/success are
-           still immediately distinguishable without the bright default cards.
-        */
+        /* 3. Native Streamlit status messages */
         [data-testid="stAlert"] {
-            background: rgba(13, 27, 42, 0.72) !important;
+            background: rgba(15, 23, 42, 0.75) !important;
             border: 1px solid rgba(148, 163, 184, 0.18) !important;
-            border-left: 3px solid rgba(0, 210, 196, 0.72) !important;
+            border-left: 3px solid rgba(56, 189, 248, 0.8) !important;
             border-radius: 8px !important;
             box-shadow: none !important;
             padding: 0.55rem 0.8rem !important;
@@ -69,12 +63,12 @@ st.markdown(
         }
 
         [data-testid="stAlert"] p {
-            color: #CBD5E1 !important;
+            color: #E2E8F0 !important;
             font-size: 0.88rem !important;
         }
 
         [data-testid="stAlert"] [data-testid="stMarkdownContainer"] {
-            color: #CBD5E1 !important;
+            color: #E2E8F0 !important;
         }
 
         /* Keep the message icon visually aligned with the text. */
@@ -194,10 +188,14 @@ else:
 st.sidebar.markdown("---")
 st.sidebar.markdown(
     """
-    <div style="font-size: 0.82rem; color: #94A3B8; padding: 0.2rem 0;">
-        <div style="font-weight: 600; color: #E2E8F0; font-size: 0.9rem;">Mukesh Revanth</div>
-        <div style="color: #00D2C4; font-size: 0.78rem;">Data Analyst Intern</div>
-        <div style="color: #64748B; font-size: 0.75rem;">Bluestock Fintech</div>
+    <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 8px; padding: 0.65rem 0.8rem; margin: 0.5rem 0;">
+        <div style="font-weight: 700; color: #F8FAFC; font-size: 0.88rem; letter-spacing: -0.01em;">Mukesh Revanth</div>
+        <div style="color: #38BDF8; font-size: 0.76rem; font-weight: 600; margin-top: 1px;">Data Analyst Intern</div>
+        <div style="color: #94A3B8; font-size: 0.72rem; margin-top: 1px;">Bluestock Fintech</div>
+        <div style="margin-top: 0.45rem; padding-top: 0.45rem; border-top: 1px solid rgba(148, 163, 184, 0.15); display: flex; justify-content: space-between;">
+            <a href="https://github.com/Revanth-4233/N100-financial-intelligence-platform" target="_blank" style="color: #60A5FA; text-decoration: none; font-size: 0.72rem; font-weight: 500;">GitHub ↗</a>
+            <span style="color: #64748B; font-size: 0.70rem;">v1.2.0</span>
+        </div>
     </div>
     """,
     unsafe_allow_html=True,
