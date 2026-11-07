@@ -191,4 +191,16 @@ else:
         # The API client provides a short local-development instruction or a concise deployed recovery note.
         st.sidebar.info(str(exc))
 
+st.sidebar.markdown("---")
+st.sidebar.markdown(
+    """
+    <div style="font-size: 0.82rem; color: #94A3B8; padding: 0.2rem 0;">
+        <div style="font-weight: 600; color: #E2E8F0; font-size: 0.9rem;">Mukesh Revanth</div>
+        <div style="color: #00D2C4; font-size: 0.78rem;">Data Analyst Intern</div>
+        <div style="color: #64748B; font-size: 0.75rem;">Bluestock Fintech</div>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
 pg.run()

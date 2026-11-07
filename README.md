@@ -414,7 +414,7 @@ N100_Financial_Intelligence/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Abhishek-369V/N100-financial-intelligence-platform.git
+git clone https://github.com/Revanth-4233/N100-financial-intelligence-platform.git
 cd N100-financial-intelligence-platform
 ```
 
@@ -609,12 +609,11 @@ Built as a 45-day, 6-sprint end-to-end project, evolving from an ETL/data-qualit
 
 ## Author:
 
-### Madanala Abhishek Varma 
+### Mukesh Revanth
 Data Analyst Intern at Bluestock Fintech
 
-#### Live Platform: [https://nifty100-finintel.streamlit.app](https://nifty100-finintel.streamlit.app/) 
-#### GitHub: [https://github.com/Abhishek-369V](https://github.com/Abhishek-369V)
-#### LinkedIn: [https://www.linkedin.com/in/madanala-abhishek-varma/](https://www.linkedin.com/in/madanala-abhishek-varma/)
+#### GitHub: [https://github.com/Revanth-4233](https://github.com/Revanth-4233)
+#### LinkedIn: [LinkedIn Profile](https://www.linkedin.com/)
 
 ---
 <h3 align="center">
