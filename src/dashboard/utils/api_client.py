@@ -16,6 +16,7 @@ import httpx
 import streamlit as st
 
 DEFAULT_API_BASE_URL = "http://127.0.0.1:8000/api/v1"
+HOSTED_API_BASE_URL = "https://n100-financial-intelligence-api-nuv0.onrender.com/api/v1"
 
 
 class APIClientError(RuntimeError):
@@ -28,12 +29,27 @@ class _TransientAPIClientError(APIClientError):
 
 def get_api_base_url() -> str:
     """Return the configured FastAPI base URL without a trailing slash."""
-    return os.getenv("N100_API_BASE_URL", DEFAULT_API_BASE_URL).rstrip("/")
+    env_url = os.getenv("N100_API_BASE_URL")
+    if env_url:
+        return env_url.rstrip("/")
+
+    try:
+        if "N100_API_BASE_URL" in st.secrets:
+            return str(st.secrets["N100_API_BASE_URL"]).rstrip("/")
+    except Exception:
+        pass
+
+    # When deployed on Streamlit Community Cloud (runs on Linux containers):
+    # automatically default to the hosted FastAPI backend.
+    if os.name == "posix" or not os.path.exists("D:/BlueStock Internship"):
+        return HOSTED_API_BASE_URL
+
+    return DEFAULT_API_BASE_URL
 
 
 def _is_local_api(base_url: str) -> bool:
     """Return True when the dashboard is configured for local FastAPI development."""
-    return base_url == DEFAULT_API_BASE_URL
+    return "127.0.0.1" in base_url or "localhost" in base_url
 
 
 def _unreachable_message(base_url: str) -> str:
