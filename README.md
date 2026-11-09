@@ -619,6 +619,9 @@ Data Analyst Intern at Bluestock Fintech
 #### GitHub: [https://github.com/Revanth-4233](https://github.com/Revanth-4233)
 #### LinkedIn: [LinkedIn Profile](https://www.linkedin.com/)
 
+#### Data Analyst Certificate: [View certificate](https://drive.google.com/file/d/1zWvliUmq8PcgZltv-CBd6vaccb3gjA8A/view?usp=sharing)
+#### Bluestock Verification: [Verify certificate](https://drive.google.com/file/d/1zWvliUmq8PcgZltv-CBd6vaccb3gjA8A/view?usp=sharing)
+
 ---
 <h3 align="center">
    ⭐ If you found this project useful, consider giving it a Star.

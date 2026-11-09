@@ -192,6 +192,10 @@ st.sidebar.markdown(
         <div style="font-weight: 700; color: #F8FAFC; font-size: 0.88rem; letter-spacing: -0.01em;">Mukesh Revanth</div>
         <div style="color: #38BDF8; font-size: 0.76rem; font-weight: 600; margin-top: 1px;">Data Analyst Intern</div>
         <div style="color: #94A3B8; font-size: 0.72rem; margin-top: 1px;">Bluestock Fintech</div>
+        <div style="margin-top: 0.4rem; display: flex; flex-direction: column; gap: 0.2rem;">
+            <a href="https://drive.google.com/file/d/1zWvliUmq8PcgZltv-CBd6vaccb3gjA8A/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="color: #60A5FA; text-decoration: none; font-size: 0.72rem; font-weight: 500;">Data Analyst Certificate ↗</a>
+            <a href="https://drive.google.com/file/d/1zWvliUmq8PcgZltv-CBd6vaccb3gjA8A/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="color: #38BDF8; text-decoration: none; font-size: 0.70rem; font-weight: 500;">Bluestock Verification ↗</a>
+        </div>
         <div style="margin-top: 0.45rem; padding-top: 0.45rem; border-top: 1px solid rgba(148, 163, 184, 0.15); display: flex; justify-content: space-between;">
             <a href="https://github.com/Revanth-4233/N100-financial-intelligence-platform" target="_blank" style="color: #60A5FA; text-decoration: none; font-size: 0.72rem; font-weight: 500;">GitHub ↗</a>
             <span style="color: #64748B; font-size: 0.70rem;">v1.2.0</span>
